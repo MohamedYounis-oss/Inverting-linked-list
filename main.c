@@ -17,13 +17,13 @@ node_t* list_createNode(int data)
 
     node_t* new_node  = (node_t*) malloc(sizeof(node_t));
 
-    if(new_node == NULLPTR)
+    if(new_node == 0)
     {
         return 0;
     }
 
     new_node->data = data;
-    new_node->next = NULLPTR;
+    new_node->next = 0;
 
 
     return new_node;
@@ -38,7 +38,7 @@ void list_addNode(node_t** phead, int data){
     node_t* newNode_address = list_createNode(data);
     node_t* current = *phead;
 
-    if(*phead == NULLPTR)
+    if(*phead == 0)
     {
         *phead = newNode_address;
         return;
